@@ -50,13 +50,44 @@ class Telegram
 	{
 		$post = [
 			"chat_id"		=> $to,
-			"text"			=> $tetx,
+			"text"			=> $text,
 			"parse_mode"	=> $parse_mode
 		];
 		if ($reply_to) {
-			$post["reply_to_message_id"]
+			$post["reply_to_message_id"] = $reply_to;
 		}
 		return $this->execute($this->bot_url."sendMessage", $post, []);
+	}
+
+
+	/**
+	 *
+	 * Send a photo.
+	 *
+	 * @param	string	$photo
+	 * @param	string 	$to
+	 * @param	string	$caption
+	 * @param	int		$reply_to
+	 * @return	string
+	 */
+	public function sendPhoto(string $photo, string $to, string $caption = null, int $reply_to = null)
+	{
+		if (!filter_var($photo, FILTER_VALIDATE_URL)) {
+			$realpath	= realpath($photo);
+			if (!$realpath) {
+				throw new \Exception("File not found. File : {$photo}", 404);
+				return false;
+			}
+			$photo		= new CurlFile($realpath);
+		}
+		$post = [
+			"chat_id"		=> $to,
+			"photo"			=> $photo
+		];
+		if ($reply_to) {
+			$post["reply_to_message_id"] = $reply_to;
+		}
+		return $this->execute($this->bot_url."sendPhoto", $post, []);
 	}
 
 
