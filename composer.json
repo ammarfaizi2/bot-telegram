@@ -1,0 +1,14 @@
+{
+    "name": "ammarfaizi2/bot-telegram",
+    "description": "Bot Telegram",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ammar Faizi",
+            "email": "ammarfaizi2@gmail.com"
+        }
+    ],
+    "require": {
+        "ammarfaizi2/ratools":"*"
+    }
+}
