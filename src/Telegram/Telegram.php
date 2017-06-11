@@ -130,6 +130,31 @@ class Telegram
 
 	public static function getInput()
 	{
-		return file_get_contents("php://input");
+		return '{
+    "update_id": 235258795,
+    "message": {
+        "message_id": 15146,
+        "from": {
+            "id": 243692601,
+            "first_name": "Ammar",
+            "last_name": "Faizi",
+            "username": "ammarfaizi2",
+            "language_code": "en-US"
+        },
+        "chat": {
+            "id": 243692601,
+            "first_name": "Ammar",
+            "last_name": "Faizi",
+            "username": "ammarfaizi2",
+            "type": "private"
+        },
+        "date": 1497171653,
+        "text": "halo"
+    }
+}';file_get_contents("php://input");
+	}
+
+	public function __debugInfo()
+	{
 	}
 }
