@@ -8,9 +8,7 @@
             "email": "ammarfaizi2@gmail.com"
         }
     ],
-    "require": {
-        "ammarfaizi2/ratools":"*"
-    },
+    "require": {},
     "autoload": {
         "psr-0": {
             "Telegram" :"src/"
