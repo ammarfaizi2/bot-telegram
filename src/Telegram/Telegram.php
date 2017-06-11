@@ -42,15 +42,33 @@ class Telegram
 	 *
 	 * @param	string	$text
 	 * @param	string	$to
-	 * @param	string	$reply_to
+	 * @param	int		$reply_to
+	 * @param	string	$parse_mode
 	 * @return	string
 	 */
-	public function send_message(string $text, string $to, string $reply_to = null)
+	public function sendMessage(string $text, string $to, int $reply_to = null, string $parse_mode = "HTML")
 	{
+		$post = [
+			"chat_id"		=> $to,
+			"text"			=> $tetx,
+			"parse_mode"	=> $parse_mode
+		];
+		if ($reply_to) {
+			$post["reply_to_message_id"]
+		}
+		return $this->execute($this->bot_url."sendMessage", $post, []);
 	}
 
 
-
+	/**
+	 *
+	 * Execute.
+	 *
+	 * @param	string			$url
+	 * @param	string|array	$post
+	 * @param	array			$option
+	 * @return	string
+	 */
 	private function execute(string $url, $post = null, array $option = null)
 	{
 		$ch = curl_init($url);
