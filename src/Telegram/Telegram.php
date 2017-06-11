@@ -33,7 +33,8 @@ class Telegram
 	 */
 	public function __construct(string $token)
 	{
-		$this->bot_url = "https://api.telegram.org/bot{$token}/";
+		$this->bot_url 		 = "https://api.telegram.org/bot{$token}/";
+		$this->webhook_input = json_decode(self::getInput(), true);
 	}
 
 	/**
@@ -125,5 +126,10 @@ class Telegram
 		$this->curl_error = curl_error($ch);
 		$this->curl_info  = curl_getinfo($ch);
 		return $this->curl_error ? $this->curl_error : $out;
+	}
+
+	public static function getInput()
+	{
+		return file_get_contents("php://input");
 	}
 }
