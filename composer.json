@@ -10,5 +10,8 @@
     ],
     "require": {
         "ammarfaizi2/ratools":"*"
+    },
+    "autoload": {
+        "psr-0": "src/"
     }
 }
