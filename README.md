@@ -16,8 +16,7 @@ $bot = new Client('BOT_TOKEN');
 $bot->sendMessage('hello world','1234'); // message, to
 ```
 ## Release History
-
-    * 0.0.1
+* 0.0.1
     * Work in progress
 ## License
     Distributed under the GPL license. See ``LICENSE`` for more information.
