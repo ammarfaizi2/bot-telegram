@@ -1,21 +1,20 @@
 # Bot-telegram
 > unofficial telegram api wrapper php
 
-![Swag logo](header.png)
+![Swag logo](assets/header.png)
 
 ## Installation
-
-    ```sh
-    composer install
-    ```
+```sh
+composer install
+```
 
 ## Overviews
-    ```php
-    require __DIR__ . '/vendor/autoload.php';
-    use Telegram\Bot\Client;
-    $bot = new Client('BOT_TOKEN');
-    $bot->sendMessage('hello world','1234'); // message, to
-    ```
+```php
+require __DIR__ . '/vendor/autoload.php';
+use Telegram\Bot\Client;
+$bot = new Client('BOT_TOKEN');
+$bot->sendMessage('hello world','1234'); // message, to
+```
 ## Release History
 
     * 0.0.1
