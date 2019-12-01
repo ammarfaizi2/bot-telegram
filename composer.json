@@ -8,10 +8,13 @@
             "email": "ammarfaizi2@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "ext-curl": "*",
+        "ext-mbstring": "*"
+    },
     "autoload": {
-        "psr-0": {
-            "Telegram" :"src/"
+        "psr-4": {
+            "Telegram\\Bot\\" :"src/"
         }
     }
 }
